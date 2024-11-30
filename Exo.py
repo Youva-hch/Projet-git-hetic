@@ -30,5 +30,24 @@ def modify_status_todos() :
         print("please try again by entering a number !")
         modify_status_todos()
         
+def delete_todo() : 
+    lister_todos()
+    print("")
+    print ("enter the todos number that you want to modify : ")
+    choice = input("choice : ")
+    print ("")
+    if choice.isnumeric() : 
+        choice = int(choice)
+        if choice <= len(todos) : 
+            if todos[choice -1] : 
+                if input ("Do you really want to delete this To-do ? (o/n) : ") == "o" :
+                    del todos[choice - 1]
+                    print("todo deleted !")
+        else : 
+            print ("This to_do doesn't exist ! ")
+    else :
+        print("please try again by entering a number !")
+        delete_todo()
+        
         
                     
