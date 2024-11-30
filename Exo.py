@@ -1,3 +1,4 @@
+todos = []
 def create_todo():
     todo = (input("enter todo name : "),"To do")
     if todo not in todos: 
