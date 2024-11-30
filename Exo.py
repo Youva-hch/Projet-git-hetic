@@ -12,3 +12,23 @@ def lister_todos() :
     if not todos : 
         print ("you don't have any to do yet ! ")
         
+        
+def modify_status_todos() :
+    print ("enter the todos number that you want to modify : ")
+    choice = input("choice :")
+    print ("")
+    if choice.isnumeric() : 
+        choice = int(choice)
+        if choice <= len(todos) : 
+            if todos [choice - 1][1] == "do" :
+                todos [choice - 1][1] == "to doe" :
+            elif not todos [choice - 1][1] == "to do" :
+                todos [choice - 1][1] == "do" 
+        else : 
+            print ("This to do doesn't exist !")
+    else : 
+        print("please try again by entering a number !")
+        modify_status_todos()
+        
+        
+                    
