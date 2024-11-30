@@ -21,7 +21,7 @@ def modify_status_todos() :
         choice = int(choice)
         if choice <= len(todos) : 
             if todos [choice - 1][1] == "do" :
-                todos [choice - 1][1] == "to doe" :
+                todos [choice - 1][1] == "to do"
             elif not todos [choice - 1][1] == "to do" :
                 todos [choice - 1][1] == "do" 
         else : 
