@@ -14,33 +14,11 @@ def lister_todos() :
         print ("you don't have any to do yet ! ")
         
         
-<<<<<<< HEAD
 def modify_status_todos() :
     print ("enter the todos number that you want to modify : ")
     choice = input("choice :")
     print ("")
     if choice.isnumeric() : 
-        choice = int(choice)
-        if choice <= len(todos) : 
-            if todos [choice - 1][1] == "do" :
-                todos [choice - 1][1] == "to do"
-            elif not todos [choice - 1][1] == "to do" :
-                todos [choice - 1][1] == "do" 
-        else : 
-            print ("This to do doesn't exist !")
-    else : 
-        print("please try again by entering a number !")
-        modify_status_todos()
-        
-def delete_todo() : 
-    lister_todos()
-=======
-def modify_status_todos():
-    print("\nEnter the todo number that you want to modify: ")
-    choice = input("Choice: ")
->>>>>>> dev
-    print("")
-    if choice.isnumeric():
         choice = int(choice)
         if 1 <= choice <= len(todos):
             current_todo = todos[choice - 1]
@@ -55,26 +33,23 @@ def modify_status_todos():
         print("Please try again by entering a valid number!")
 
 def delete_todo():
-    lister_todos()  # Assure-toi que cette fonction est définie dans ton programme
+    lister_todos() 
     print("")
-    print("\nEnter the todo number that you want to delete:")
-    choice = input("choice: ")
-    print("")
-    
-    if choice.isnumeric():
+    print ("enter the todos number that you want to modify : ")
+    choice = input("choice : ")
+    print ("")
+    if choice.isnumeric() : 
         choice = int(choice)
-        if 1 <= choice <= len(todos):  # Vérifie que le choix est valide
-            confirmation = input("Do you really want to delete this todo? (y/n): ")
-            if confirmation.lower() == "y":  # Vérifie si l'utilisateur confirme
-                del todos[choice - 1]
-                print("Todo deleted!")
-            else:
-                print("Deletion canceled.")
-        else:
-            print("This todo doesn't exist!")
-    else:
-        print("Please try again by entering a valid number!")
-    
+        if choice <= len(todos) : 
+            if todos[choice -1] : 
+                if input ("Do you really want to delete this To-do ? (o/n) : ") == "o" :
+                    del todos[choice - 1]
+                    print("todo deleted !")
+        else : 
+            print ("This to_do doesn't exist ! ")
+    else :
+        print("please try again by entering a number !")
+        delete_todo()
 def main():
     while True:
         print("\n--- Todo Manager ---")
@@ -102,6 +77,5 @@ def main():
 # Lancer le programme
 if __name__ == "__main__":
     main()
-        
         
                     
