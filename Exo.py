@@ -14,11 +14,11 @@ def lister_todos() :
         print ("you don't have any to do yet ! ")
         
         
-def modify_status_todos() :
-    print ("enter the todos number that you want to modify : ")
-    choice = input("choice :")
-    print ("")
-    if choice.isnumeric() : 
+def modify_status_todos():
+    print("\nEnter the todo number that you want to modify: ")
+    choice = input("Choice: ")
+    print("")
+    if choice.isnumeric():
         choice = int(choice)
         if 1 <= choice <= len(todos):
             current_todo = todos[choice - 1]
@@ -33,9 +33,53 @@ def modify_status_todos() :
         print("Please try again by entering a valid number!")
 
 def delete_todo():
-    lister_todos() 
+    lister_todos()  # Assure-toi que cette fonction est définie dans ton programme
     print("")
-    print ("enter the todos number that you want to modify : ")
+    print("\nEnter the todo number that you want to delete:")
+    choice = input("choice: ")
+    print("")
+    
+    if choice.isnumeric():
+        choice = int(choice)
+        if 1 <= choice <= len(todos):  # Vérifie que le choix est valide
+            confirmation = input("Do you really want to delete this todo? (y/n): ")
+            if confirmation.lower() == "y":  # Vérifie si l'utilisateur confirme
+                del todos[choice - 1]
+                print("Todo deleted!")
+            else:
+                print("Deletion canceled.")
+        else:
+            print("This todo doesn't exist!")
+    else:
+        print("Please try again by entering a valid number!")
+    
+def main():
+    while True:
+        print("\n--- Todo Manager ---")
+        print("1. Add a new todo")
+        print("2. List all todos")
+        print("3. Modify todo status")
+        print("4. Delete a todo")  # Option ajoutée
+        print("5. Quit")  # Mise à jour du numéro de l'option Quit
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            create_todo()
+        elif choice == "2":
+            lister_todos()
+        elif choice == "3":
+            modify_status_todos()
+        elif choice == "4":  # Ajout de l'appel à delete_todo
+            delete_todo()
+        elif choice == "5":  # Numéro mis à jour pour Quit
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again!")
+
+# Lancer le programme
+if __name__ == "__main__":
+    main()
     choice = input("choice : ")
     print ("")
     if choice.isnumeric() : 
