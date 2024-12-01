@@ -14,11 +14,19 @@ def lister_todos() :
         print ("you don't have any to do yet ! ")
         
         
+<<<<<<< HEAD
 def modify_status_todos() :
     print ("enter the todos number that you want to modify : ")
     choice = input("choice :")
     print ("")
     if choice.isnumeric() : 
+=======
+def modify_status_todos():
+    print("\nEnter the todo number that you want to modify: ")
+    choice = input("Choice: ")
+    print("")
+    if choice.isnumeric():
+>>>>>>> release/v1.0
         choice = int(choice)
         if 1 <= choice <= len(todos):
             current_todo = todos[choice - 1]
@@ -77,5 +85,24 @@ def main():
 # Lancer le programme
 if __name__ == "__main__":
     main()
+    choice = input("choice : ")
+    print ("")
+    if choice.isnumeric() : 
+        choice = int(choice)
+        if choice <= len(todos) : 
+            if todos[choice -1] : 
+                if input ("Do you really want to delete this To-do ? (o/n) : ") == "o" :
+                    del todos[choice - 1]
+                    print("todo deleted !")
+        else : 
+            print ("This to_do doesn't exist ! ")
+    else :
+        print("please try again by entering a number !")
+        delete_todo()
+        
+<<<<<<< HEAD
+                    
+=======
         
                     
+>>>>>>> release/v1.0
