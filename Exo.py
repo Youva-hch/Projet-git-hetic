@@ -14,31 +14,9 @@ def lister_todos() :
         print ("you don't have any to do yet ! ")
         
         
-<<<<<<< HEAD
-def modify_status_todos() :
-    print ("enter the todos number that you want to modify : ")
-    choice = input("choice :")
-    print ("")
-    if choice.isnumeric() : 
-        choice = int(choice)
-        if choice <= len(todos) : 
-            if todos [choice - 1][1] == "do" :
-                todos [choice - 1][1] == "to do"
-            elif not todos [choice - 1][1] == "to do" :
-                todos [choice - 1][1] == "do" 
-        else : 
-            print ("This to do doesn't exist !")
-    else : 
-        print("please try again by entering a number !")
-        modify_status_todos()
-        
-def delete_todo() : 
-    lister_todos()
-=======
 def modify_status_todos():
     print("\nEnter the todo number that you want to modify: ")
     choice = input("Choice: ")
->>>>>>> dev
     print("")
     if choice.isnumeric():
         choice = int(choice)
