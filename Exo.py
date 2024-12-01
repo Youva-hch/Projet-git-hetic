@@ -33,7 +33,7 @@ def modify_status_todos():
         print("Please try again by entering a valid number!")
 
 def delete_todo():
-    lister_todos()  # Assure-toi que cette fonction est définie dans ton programme
+    lister_todos()
     print("")
     print("\nEnter the todo number that you want to delete:")
     choice = input("choice: ")
@@ -80,6 +80,18 @@ def main():
 # Lancer le programme
 if __name__ == "__main__":
     main()
+
+        if choice <= len(todos) : 
+            if todos [choice - 1][1] == "do" :
+                todos [choice - 1][1] == "to do"
+            elif not todos [choice - 1][1] == "to do" :
+                todos [choice - 1][1] == "do" 
+        else : 
+            print ("This to do doesn't exist !")
+    else : 
+        print("please try again by entering a number !")
+        modify_status_todos()
+main
         
         
                     
